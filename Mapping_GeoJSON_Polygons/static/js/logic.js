@@ -43,15 +43,14 @@ let torontoData = "https://raw.githubusercontent.com/craig-clemens/Mapping_Earth
 d3.json(torontoData).then(function(data) {
   console.log(data);
 
-// Create a style for the lines.
-let myStyle = {
-  color: "#ffffa1",
-  weight: 2
+// // Create a style for the lines.
+// let myStyle = {
+//   color: "#ffffa1",
+//   weight: 2
 
 // Creating a GeoJSON layer with the retrieved data
 
 L.geoJson(data, {
-  style: myStyle,
   onEachFeature: function(feature, layer) {
     layer.bindPopup("<h3> Airline :" + feature.properties.airline + "</h3 <hr><h3> Destination: " + feature.properties.dst + "</h3>");
   }
